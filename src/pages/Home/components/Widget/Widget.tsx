@@ -18,6 +18,43 @@ interface Props extends PropsWithChildren {
   className?: string;
 }
 
+export const WidgetOptions = () => {
+  const [open, setOpen] = useState(false);
+
+  const ref: RefObject<any> = useRef(null);
+
+  useClickOutside({ ref, callback: () => setOpen(false) });
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button onClick={handleOpen} type="button">
+        <Icon
+          type="threedots"
+          className="stroke-black-secondary hover:stroke-black-primary cursor-pointer"
+        />
+      </button>
+      {open ? (
+        <div className="container-shadow absolute bg-white-primary right-0 mt-1 whitespace-nowrap flex flex-col">
+          <button
+            className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start"
+            type="button"
+          >
+            Change size
+          </button>
+          <button
+            className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start"
+            type="button"
+          >
+            Remove widget
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
+};
+
 const Widget: React.FC<Props> = ({
   title,
   subtitle,
@@ -63,43 +100,6 @@ export const WidgetSection: React.FC<
   PropsWithChildren<{ isLast?: boolean; className?: string }>
 > = (props) => {
   return <CardBodySection {...props} />;
-};
-
-export const WidgetOptions = () => {
-  const [open, setOpen] = useState(false);
-
-  const ref: RefObject<any> = useRef(null);
-
-  useClickOutside({ ref, callback: () => setOpen(false) });
-
-  const handleOpen = () => setOpen(!open);
-
-  return (
-    <div className="relative" ref={ref}>
-      <button onClick={handleOpen} type="button">
-        <Icon
-          type="threedots"
-          className="stroke-black-secondary hover:stroke-black-primary cursor-pointer"
-        />
-      </button>
-      {open ? (
-        <div className="container-shadow absolute bg-white-primary right-0 mt-1 whitespace-nowrap flex flex-col">
-          <button
-            className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start"
-            type="button"
-          >
-            Change size
-          </button>
-          <button
-            className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start"
-            type="button"
-          >
-            Remove widget
-          </button>
-        </div>
-      ) : null}
-    </div>
-  );
 };
 
 export default Widget;

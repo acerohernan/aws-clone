@@ -37,7 +37,7 @@ const Button: React.FC<Props> = ({
 }) => {
   const { classNames, iconClassNames } = variant
     ? variants[variant]
-    : variants['primary'];
+    : variants.primary;
 
   return (
     <button
