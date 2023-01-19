@@ -107,35 +107,35 @@ const HomePage = () => {
             addInfoLink
             footer="Go to AWS Cost Management"
             className="lg:col-span-2"
-          ></Widget>
+          />
           <Widget
             title="Build a solution"
             addInfoLink
             className="lg:col-span-2"
-          ></Widget>
+          />
           <Widget
             title="Trusted Advisor"
             addInfoLink
             footer="Go to Trusted Advisor"
-          ></Widget>
-          <Widget title="Explore AWS" addInfoLink></Widget>
-          <Widget title="Latest announcements" addInfoLink></Widget>
+          />
+          <Widget title="Explore AWS" addInfoLink />
+          <Widget title="Latest announcements" addInfoLink />
           <Widget
             title="Recent AWS blog posts"
             addInfoLink
             footer="View all blog posts"
-          ></Widget>
+          />
           <Widget
             title="Applications"
             addInfoLink
             className="lg:col-span-2"
             footer="Go to Application Manager"
-          ></Widget>
+          />
           <Widget
             title="Security Hub"
             addInfoLink
             footer="Go to Security Hub"
-          ></Widget>
+          />
         </div>
         <div className="flex justify-between items-center pt-[16px]">
           <div className="flex flex-col lg:gap-1 lg:flex-row">
