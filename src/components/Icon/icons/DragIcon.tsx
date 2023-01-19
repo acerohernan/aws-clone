@@ -11,7 +11,6 @@ const DragIcon: React.FC<IconProps> = ({ className }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       focusable="false"
-      touch-action="manipulation"
       className={className ?? 'stroke-black-primary'}
     >
       <path

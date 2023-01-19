@@ -9,9 +9,11 @@ interface Props extends PropsWithChildren {
 }
 
 const Link: React.FC<Props> = ({ children, size, bold, className }) => {
+  const textSize = `text-${size || 'sm'}`;
+
   return (
     <span
-      className={`text-${size ?? 'sm'}
+      className={`${textSize}
       ${bold ? 'font-bold' : ''}
       text-skyblue-primary hover:underline cursor-pointer
       ${className}

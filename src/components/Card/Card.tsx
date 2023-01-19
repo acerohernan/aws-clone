@@ -47,7 +47,7 @@ export const CardFooter: React.FC<
   PropsWithChildren<{ className?: string }>
 > = ({ children }) => {
   return (
-    <div className={`py-3 px-5 border-gray-thirdty border-y`}>{children}</div>
+    <div className="py-3 px-5 border-gray-thirdty border-y">{children}</div>
   );
 };
 

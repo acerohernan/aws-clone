@@ -33,7 +33,7 @@ const Widget: React.FC<Props> = ({
     <Card className={className}>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <button>
+          <button type="button">
             <Icon type="drag" className="stoke-gray-secondary" />
           </button>
           <div className="w-full ml-3 flex items-center gap-2">
@@ -76,7 +76,7 @@ export const WidgetOptions = () => {
 
   return (
     <div className="relative" ref={ref}>
-      <button onClick={handleOpen}>
+      <button onClick={handleOpen} type="button">
         <Icon
           type="threedots"
           className="stroke-black-secondary hover:stroke-black-primary cursor-pointer"
@@ -84,10 +84,16 @@ export const WidgetOptions = () => {
       </button>
       {open ? (
         <div className="container-shadow absolute bg-white-primary right-0 mt-1 whitespace-nowrap flex flex-col">
-          <button className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start">
+          <button
+            className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start"
+            type="button"
+          >
             Change size
           </button>
-          <button className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start">
+          <button
+            className="text-sm px-5 py-1 border border-white-primary hover:bg-gray-primary hover:border-gray-forty text-start"
+            type="button"
+          >
             Remove widget
           </button>
         </div>

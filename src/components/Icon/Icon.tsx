@@ -20,7 +20,7 @@ interface Props {
   className?: string;
 }
 
-const iconMap: Record<IconType, React.FC<IconProps>> = {
+export const iconMap: Record<IconType, React.FC<IconProps>> = {
   plus: PlusIcon,
   xmark: XMarkIcon,
   threedots: ThreeDotsIcon,

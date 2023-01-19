@@ -13,15 +13,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: 'Link',
-    size: 'sm',
   },
 };
 
-/* export const AllSizes = () => {
-  <div className="border w-10 h-10">
-    <Link size="xs">Link</Link>
-    <Link size="sm">Link</Link>
-    <Link size="md">Link</Link>
-  </div>;
+export const AllSizes = () => {
+  return (
+    <div className="w-14 h-14 flex flex-col">
+      <Link size="xs">Link</Link>
+      <Link size="sm">Link</Link>
+      <Link size="md">Link</Link>
+    </div>
+  );
 };
- */

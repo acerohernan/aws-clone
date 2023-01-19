@@ -17,6 +17,7 @@ module.exports = {
         'skyblue-primary': '#0875C4',
         'skyblue-secondary': '#0073bb',
         'skyblue-thirdty': '#f1faff',
+        'modal-open-background': 'rgba(242, 243, 243, .9)',
       },
       fontSize: {
         xs: '12px',

@@ -32,6 +32,7 @@ const Button: React.FC<Props> = ({
   iconEnd,
   children,
   className: propsClassName,
+  type,
   ...props
 }) => {
   const { classNames, iconClassNames } = variant
@@ -41,6 +42,7 @@ const Button: React.FC<Props> = ({
   return (
     <button
       {...props}
+      type={'button' || type}
       className={`${classNames} px-[20px] py-[6px] font-bold text-sm flex items-center gap-2 group rounded-sm ${propsClassName}`}
     >
       {iconStart ? <Icon type={iconStart} className={iconClassNames} /> : null}

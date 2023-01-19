@@ -13,7 +13,6 @@ const meta = {
 } satisfies Meta<typeof Card>;
 
 export default meta;
-//type Story = StoryObj<typeof meta>;
 
 export const Default = () => {
   return (
@@ -33,6 +32,24 @@ export const Default = () => {
       <CardFooter>
         <div className="text-center">Footer</div>
       </CardFooter>
+    </Card>
+  );
+};
+
+export const WithoutFooter = () => {
+  return (
+    <Card>
+      <CardHeader>
+        <div className="text-center">Header</div>
+      </CardHeader>
+      <CardBody>
+        <CardBodySection>
+          <span className="my-5 block">Section1</span>
+        </CardBodySection>
+        <CardBodySection isLast>
+          <span className="my-5 block">Section2</span>
+        </CardBodySection>
+      </CardBody>
     </Card>
   );
 };

@@ -13,10 +13,50 @@ export const Default: Story = {
   args: {
     title: 'Title',
     footer: 'Footer',
+    className: 'w-[386px]',
     children: (
       <div>
-        <WidgetSection>Section 1</WidgetSection>
-        <WidgetSection>Section 2</WidgetSection>
+        <WidgetSection>
+          <span className="text-sm text-black-secondary">Section 1</span>
+        </WidgetSection>
+        <WidgetSection>
+          <span className="text-sm text-black-secondary">Section 2</span>
+        </WidgetSection>
+      </div>
+    ),
+  },
+};
+
+export const WithoutFooter: Story = {
+  args: {
+    title: 'Title',
+    className: 'w-[386px]',
+    children: (
+      <div>
+        <WidgetSection>
+          <span className="text-sm text-black-secondary">Section 1</span>
+        </WidgetSection>
+        <WidgetSection>
+          <span className="text-sm text-black-secondary">Section 2</span>
+        </WidgetSection>
+      </div>
+    ),
+  },
+};
+
+export const WithInfoLink: Story = {
+  args: {
+    title: 'Title',
+    className: 'w-[386px]',
+    addInfoLink: true,
+    children: (
+      <div>
+        <WidgetSection>
+          <span className="text-sm text-black-secondary">Section 1</span>
+        </WidgetSection>
+        <WidgetSection>
+          <span className="text-sm text-black-secondary">Section 2</span>
+        </WidgetSection>
       </div>
     ),
   },
