@@ -35,7 +35,7 @@ const Modal: React.FC<Props> = ({ onDismiss }) => {
             .filter((widget) => !widget.isAdded)
             .map(({ id, title }) => {
               return (
-                <label htmlFor={id} className="cursor-pointer">
+                <label htmlFor={id} className="cursor-pointer" key={id}>
                   <Card key={id}>
                     <CardBody>
                       <div className="flex items-start justify-between">
