@@ -1,0 +1,16 @@
+{
+  "widgets": [
+    {
+      "id": "irLnnOIu",
+      "title": "Recently visited",
+      "infoLink": true,
+      "footer": "View all services"
+    },
+    {
+      "id": "mCsUr_BB",
+      "title": "Welcome to AWS",
+      "infoLink": false,
+      "footer": null
+    }
+  ]
+}

@@ -6,12 +6,12 @@ type Handler = () => void;
 export default function useModal(
   modal: React.ReactNode,
   closeOnOverlayClick = true
-): { onPresent: Handler; onDismiss: Handler } {
+): [Handler, Handler] {
   const { onPresent, onDismiss } = useContext(ModalContext);
 
   const onPresentCallback = useCallback(() => {
     onPresent(modal, closeOnOverlayClick);
   }, [modal, closeOnOverlayClick, onPresent]);
 
-  return { onPresent: onPresentCallback, onDismiss };
+  return [onPresentCallback, onDismiss];
 }

@@ -10,7 +10,7 @@ import { services, steps } from './constants';
 import { healthStats } from './constants/health';
 
 const HomePage = () => {
-  const { onPresent, onDismiss } = useModal(<Modal />, true);
+  const [onPresentModalWidget] = useModal(<Modal />, true);
 
   return (
     <div className="py-4 px-2 sm:px-0">
@@ -26,7 +26,11 @@ const HomePage = () => {
             <Button variant="secondary" className="mb-2 xs:mb-0">
               Reset to default layout
             </Button>
-            <Button variant="primary" iconStart="plus" onClick={onPresent}>
+            <Button
+              variant="primary"
+              iconStart="plus"
+              onClick={onPresentModalWidget}
+            >
               Add widgets
             </Button>
           </div>
@@ -146,7 +150,11 @@ const HomePage = () => {
             <Link>Want to see another widget?</Link>
             <Link>Tell us!</Link>
           </div>
-          <Button iconStart="plus" variant="secondary" onClick={onPresent}>
+          <Button
+            iconStart="plus"
+            variant="secondary"
+            onClick={onPresentModalWidget}
+          >
             Add widgets
           </Button>
         </div>
