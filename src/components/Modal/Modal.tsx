@@ -3,18 +3,18 @@ import Card, { CardBody, CardFooter, CardHeader } from '../Card';
 import Icon from '../Icon';
 
 interface Props {
-  closeModal: () => void;
+  onDismiss?: () => void;
 }
 
-const Modal: React.FC<Props> = ({ closeModal }) => {
+const Modal: React.FC<Props> = ({ onDismiss }) => {
   return (
-    <Card className="w-full max-w-[820px] mx-auto">
+    <Card className="w-full max-w-[820px] mx-auto relative z-30 overflow-auto">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="w-full flex items-center gap-2">
             <h4 className="text-[18px] font-semibold">Add widgets</h4>
           </div>
-          <button onClick={closeModal}>
+          <button onClick={onDismiss} type="button">
             <Icon
               type="xmark"
               className="stroke-black-secondary hover:stroke-black-primary"
@@ -32,7 +32,7 @@ const Modal: React.FC<Props> = ({ closeModal }) => {
 
       <CardFooter>
         <div className="w-full flex gap-2 justify-end">
-          <Button variant="secondary" onClick={closeModal}>
+          <Button variant="secondary" onClick={onDismiss}>
             Cancel
           </Button>
           <Button>Add</Button>

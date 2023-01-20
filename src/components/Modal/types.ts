@@ -1,9 +1,13 @@
+import React from 'react';
+
 export interface IModalContext {
-  state: IModalContextState;
-  actions: IModalContextActions;
+  isOpen: boolean;
+  modalNode: React.ReactNode;
+  setModalNode: React.Dispatch<React.SetStateAction<React.ReactNode>>;
+  onPresent: (node: React.ReactNode, closeInOverlayClick: boolean) => void;
+  onDismiss: () => void;
 }
-export interface IModalContextState {}
-export interface IModalContextActions {
-  openModal: () => void;
-  closeModal: () => void;
+
+export interface ModalInheritProps {
+  onDismiss?: () => void;
 }
