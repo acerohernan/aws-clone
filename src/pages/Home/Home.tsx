@@ -1,16 +1,15 @@
 import { memo } from 'react';
 import Button from '../../components/Button';
-import Icon from '../../components/Icon';
 import Link from '../../components/Link';
 import Message from '../../components/Message';
 import Modal from '../../components/Modal';
 import useModal from '../../components/Modal/useModal';
-import Widget, { WidgetSection } from './components/Widget';
-import { services, steps } from './constants';
-import { healthStats } from './constants/health';
+import { useAppSelector } from '../../state';
+import Widget from './components/Widget';
 
 const HomePage = () => {
   const [onPresentModalWidget] = useModal(<Modal />, true);
+  const { widgetsMap } = useAppSelector((state) => state.home);
 
   return (
     <div className="py-4 px-2 sm:px-0">
@@ -47,7 +46,7 @@ const HomePage = () => {
           </div>
         </Message>
         <div className="my-5 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-          <Widget
+          {/* <Widget
             title="Recently visited"
             footer="View all services"
             addInfoLink
@@ -143,7 +142,20 @@ const HomePage = () => {
             title="Security Hub"
             addInfoLink
             footer="Go to Security Hub"
-          />
+          /> */}
+          {Object.values(widgetsMap)
+            .filter((widget) => widget.isAdded)
+            .map(({ title, infoLink, footer, big, id }) => {
+              return (
+                <Widget
+                  key={id}
+                  title={title}
+                  addInfoLink={infoLink}
+                  footer={footer || ''}
+                  className={`${big ? 'lg:col-span-2' : ''}`}
+                />
+              );
+            })}
         </div>
         <div className="flex justify-between items-center pt-[16px]">
           <div className="flex flex-col lg:gap-1 lg:flex-row">

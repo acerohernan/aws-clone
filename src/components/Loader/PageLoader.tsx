@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Loader from './Loader';
 
 const PageLoader = () => {
@@ -8,4 +9,4 @@ const PageLoader = () => {
   );
 };
 
-export default PageLoader;
+export default memo(PageLoader);

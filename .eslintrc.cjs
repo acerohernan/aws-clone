@@ -35,5 +35,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     '@typescript-eslint/no-empty-interface': 0,
     'jsx-a11y/no-static-element-interactions': 1,
+    'no-promise-executor-return': 0,
   },
 };
