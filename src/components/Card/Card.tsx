@@ -2,11 +2,18 @@ import { PropsWithChildren } from 'react';
 
 interface CardProps extends PropsWithChildren {
   className?: string;
+  selected?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ children, className }) => {
+const Card: React.FC<CardProps> = ({ children, className, selected }) => {
   return (
-    <div className={`container-shadow bg-white-primary ${className}`}>
+    <div
+      className={`container-shadow ${
+        selected
+          ? 'border border-skyblue-secondary bg-skyblue-thirdty '
+          : 'bg-white-primary'
+      }  ${className}`}
+    >
       {children}
     </div>
   );

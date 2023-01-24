@@ -36,5 +36,8 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 0,
     'jsx-a11y/no-static-element-interactions': 1,
     'no-promise-executor-return': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    'no-empty-pattern': 0,
+    '@typescript-eslint/no-unused-expressions': 0,
   },
 };

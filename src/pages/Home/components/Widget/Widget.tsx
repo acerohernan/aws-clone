@@ -1,4 +1,5 @@
 import { PropsWithChildren, RefObject, useRef, useState } from 'react';
+import { DraggableProvidedDragHandleProps } from 'react-beautiful-dnd';
 import Card, {
   CardBody,
   CardBodySection,
@@ -9,13 +10,12 @@ import Icon from '../../../../components/Icon';
 import Link from '../../../../components/Link';
 import { useClickOutside } from '../../../../hooks/useClickOutside';
 
-interface Props extends PropsWithChildren {
+export interface WidgetProps extends PropsWithChildren {
   title: string;
-  subtitle?: string;
   footer?: string;
-  footerOutside?: boolean;
   addInfoLink?: boolean;
   className?: string;
+  dragHandleProps?: DraggableProvidedDragHandleProps | null;
 }
 
 export const WidgetOptions = () => {
@@ -55,14 +55,13 @@ export const WidgetOptions = () => {
   );
 };
 
-const Widget: React.FC<Props> = ({
+const Widget: React.FC<WidgetProps> = ({
   title,
-  subtitle,
   footer,
   addInfoLink,
-  footerOutside,
   children,
   className,
+  dragHandleProps,
 }) => {
   const bodySizeClass = footer ? 'h-[338px]' : 'h-[385px]';
 
@@ -70,7 +69,7 @@ const Widget: React.FC<Props> = ({
     <Card className={className}>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <button type="button">
+          <button type="button" {...dragHandleProps}>
             <Icon type="drag" className="stoke-gray-secondary" />
           </button>
           <div className="w-full ml-3 flex items-center gap-2">
