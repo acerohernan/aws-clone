@@ -3,4 +3,4 @@
 ## Tech Stack
 
 - React
-- Typescript 
+- Typescript
