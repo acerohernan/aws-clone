@@ -2,4 +2,5 @@
 
 ## Tech Stack
 
-- React 
+- React
+- Typescript 
