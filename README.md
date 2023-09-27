@@ -5,3 +5,4 @@
 - React
 - Typescript
 - Storybook
+- TailwindCSS
