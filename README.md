@@ -6,3 +6,4 @@
 - Typescript
 - Storybook
 - TailwindCSS
+- Redux
